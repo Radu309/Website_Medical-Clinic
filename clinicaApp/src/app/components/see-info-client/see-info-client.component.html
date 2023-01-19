@@ -1,0 +1,104 @@
+<section class="image vh-100 bg-image">
+<div class="container">
+  <div class="panel-body inf-content">
+    <div class="row img-circle img-thumbnail isTooltip">
+      <div class="col-md-4">
+        <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="{{oneClient?.imageUrl}}" data-original-title="Usuario">
+        <ul title="Ratings" class="list-inline ratings text-center">
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <strong>Information</strong><br>
+        <div class="table-responsive">
+          <table class="table table-user-information">
+            <tbody>
+            <tr>
+              <td>
+                <strong>
+                  <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                  Id
+                </strong>
+              </td>
+              <td class="text-primary">
+                {{oneClient?.id}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>
+                  <span class="glyphicon glyphicon-user  text-primary"></span>
+                  Name
+                </strong>
+              </td>
+              <td class="text-primary">
+                {{oneClient?.name}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>
+                  <span class="glyphicon glyphicon-cloud text-primary"></span>
+                  Email
+                </strong>
+              </td>
+              <td class="text-primary">
+                {{oneClient?.email}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>
+                  <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                  Phone
+                </strong>
+              </td>
+              <td class="text-primary">
+                {{oneClient?.phone}}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>
+                  <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                  Role
+                </strong>
+              </td>
+              <td class="text-primary">
+                Client
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>
+                  <span class="glyphicon glyphicon-envelope text-primary"></span>
+                  Age
+                </strong>
+              </td>
+              <td class="text-primary">
+                {{oneClient?.age}}
+              </td>
+            </tr>
+            <tr *ngFor="let app of oneClient?.appointmentsClient; let i = index" [attr.data-index]="i">
+              <td>
+                <strong>
+                  <span class="glyphicon glyphicon-calendar text-primary"></span>
+                  Appointment {{i+1}}
+                </strong>
+              </td>
+              <td class="text-primary">
+                {{app.day}}: {{app.hour}}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

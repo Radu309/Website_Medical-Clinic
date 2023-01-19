@@ -1,0 +1,67 @@
+<section class="image vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-4">
+              <h2 class="text-uppercase text-center mb-3">Welcome!</h2>
+              <form>
+                <div class="form-outline mb-0">
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                  <input type="name" id="form3Example1cg" class="form-control form-control-lg" placeholder="Name"
+                         ngModel required #name="ngModel" [ngModelOptions]="{standalone: true}"/>
+                </div>
+
+                <div class="form-outline mb-0">
+                  <label class="form-label" for="form3Example2cg">Your Email</label>
+                  <input type="email" id="form3Example2cg" class="form-control form-control-lg" placeholder="Email"
+                         ngModel required #email="ngModel" [ngModelOptions]="{standalone: true}"/>
+                </div>
+
+                <div class="form-outline mb-0">
+                  <label class="form-label" for="form3Example3cg">Your Phone</label>
+                  <input type="phone" id="form3Example3cg" class="form-control form-control-lg" placeholder="Phone"
+                         ngModel required #phone="ngModel" [ngModelOptions]="{standalone: true}"/>
+                </div>
+
+                <div class="form-outline mb-0">
+                  <label class="form-label" for="form3Example4cg">Your Age</label>
+                  <input type="age" id="form3Example4cg" class="form-control form-control-lg" placeholder="Age"
+                         ngModel required #age="ngModel" [ngModelOptions]="{standalone: true}"/>
+                </div>
+
+                <div class="form-outline mb-0">
+                  <label class="form-label" for="form3Example5cg">Type Password</label>
+                  <input type="password" id="form3Example5cg" class="form-control form-control-lg" placeholder="Password"
+                         ngModel required #password="ngModel" [ngModelOptions]="{standalone: true}"/>
+                </div>
+
+                <div class="form-outline mb-0">
+                  <label class = "form-label" for="form3Example6cg">Select Gender</label>
+                  <select type = "selectGender" id="form3Example6cg" class="form-control form-control-lg"
+                          ngModel required #gender="ngModel" [ngModelOptions]="{standalone: true}">
+                    <option>Male
+                    <option>Female
+                  </select>
+                </div>
+
+                <div>
+                  <label></label>
+                </div>
+
+
+                <div class="d-flex justify-content-center">
+                  <button (click)="clickOnRegisterAccount( name.value, email.value, age.value, phone.value, password.value, gender.value)"
+                          type="button"
+                          class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">REGISTER</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<router-outlet></router-outlet>

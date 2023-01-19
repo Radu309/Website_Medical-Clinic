@@ -1,0 +1,124 @@
+<div class="image vh-100 bg-image" xmlns="http://www.w3.org/1999/html" >
+  <div class="chestie">
+    <div class="container-fluid p-0">
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="card">
+            <div class="card-header pb-0">
+              <h5 class="card-title mb-0">Doctors</h5>
+            </div>
+            <div class="card-body">
+              <table class="table table-striped" style="width:100%">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor = "let doctor of doctors">
+                  <td><img src="{{doctor?.imageUrl}}" width="32" height="32" class="rounded-circle my-n1" alt="Avatar"></td>
+                  <td>{{doctor?.firstName}} {{doctor?.lastName}}</td>
+                  <td>{{doctor?.email}}</td>
+                  <td><span>{{doctor?.phone}}</span></td>
+                  <td><button (click)="clickOnSeeMoreButton(doctor)" class="badge bg-success">See more here</button></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+          <div class="col-xl-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">Services</h5>
+              </div>
+              <div class = "searchDoctor">
+                Search for your problem:
+                <button (click) = "clickOnSearchButton()"> Search</button>
+              </div>
+              <br>
+              <select id="selectProfession" class = "form-select" [(ngModel)]="selectForSearch">
+                <option>Select what you need</option>
+                <option *ngFor="let profession of professions; let i = index "
+                        >{{profession.name}}</option>
+              </select>
+              <br>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title mb-0">Doctor</h5>
+              </div>
+              <div class="card mb-1">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-2"><h6 class="mb-0">Avatar:</h6></div>
+                    <div class="col-sm-4 text-secondary">
+                      <img src="{{oneDoctor.imageUrl}}" width="55" height="55" class="rounded-circle my-n1" alt="Avatar">
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-2"><h6 class="mb-0">Full Name</h6></div>
+                    <div class="col-sm-4 text-secondary">{{oneDoctor.firstName}} {{oneDoctor.lastName}}</div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-2"><h6 class="mb-0">Email</h6></div>
+                    <div class="col-sm-4 text-secondary">{{oneDoctor.email}}</div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-2"><h6 class="mb-0">Phone</h6></div>
+                    <div class="col-sm-4 text-secondary">{{oneDoctor.phone}}</div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-2"><h6 class="mb-0">Services</h6></div>
+                    <div class="col-sm-4 text-secondary">
+                      <select id="selectProfessionForOneDoctor" class = "form-select"
+                              [(ngModel)]="selectProfession" (ngModelChange)="saveProfession($event)">
+                        <option>Select what you need</option>
+                        <option *ngFor="let profession of oneDoctor.professions; let i = index "
+                        >{{profession.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-2"><h6 class="mb-0">Specialities</h6></div>
+                    <div class="col-sm-10 text-secondary">
+                      <select id="selectRequirement" class = "form-select"
+                              [(ngModel)]="selectRequirement" (ngModelChange)="saveRequirement($event)">
+                        <option>Select what you need</option>
+                        <option *ngFor = "let requirement of newRequirements"
+                        >{{requirement.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-4"><h6 class="mb-0">Find a date to schedule</h6></div>
+                    <div class="col-sm-3">
+                      <button (click) = "clickOnSchedule('Schedule')">
+                        Click Here!
+                      </button>
+                    </div>
+                    <div class="col-sm-4">
+                      <button (click) = "clickOnReceipt()">
+                        Generate the receipt!
+                      </button>
+                    </div>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

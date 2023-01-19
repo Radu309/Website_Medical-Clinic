@@ -1,0 +1,47 @@
+<section class="image vh-100 bg-image">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+        <tr class="bg-light-gray">
+          <th ><button (click)="refresh()" type="button" class="btn btn-outline-dark">Refresh</button>
+          </th>
+          <th class="text-uppercase">Monday</th>
+          <th class="text-uppercase">Tuesday</th>
+          <th class="text-uppercase">Wednesday</th>
+          <th class="text-uppercase">Thursday</th>
+          <th class="text-uppercase">Friday</th>
+          <th class="text-uppercase">Saturday</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let nr of arrayCalendar; let i = index" [attr.data-index]="i" >
+          <td class="align-middle bg-light-gray">0{{i+8}}:00</td>
+          <td class = "bg-light-gray">
+            <span ><button (click)="clickForSchedule(i, 0)" type="button" class="btn btn-outline-{{arrayCalendarColor[i][0]}}">{{nr[0]}}</button></span>
+          </td>
+          <td class = "bg-light-gray">
+            <span ><button (click)="clickForSchedule(i, 1)" type="button" class="btn btn-outline-{{arrayCalendarColor[i][1]}}">{{nr[1]}}</button></span>
+          </td>
+          <td class = "bg-light-gray">
+            <span ><button (click)="clickForSchedule(i, 2)" type="button" class="btn btn-outline-{{arrayCalendarColor[i][2]}}">{{nr[2]}}</button></span>
+          </td>
+          <td class = "bg-light-gray">
+            <span ><button (click)="clickForSchedule(i, 3)" type="button" class="btn btn-outline-{{arrayCalendarColor[i][3]}}">{{nr[3]}}</button></span>
+          </td>
+          <td class = "bg-light-gray">
+            <span ><button (click)="clickForSchedule(i, 4)" type="button" class="btn btn-outline-{{arrayCalendarColor[i][4]}}">{{nr[4]}}</button></span>
+          </td>
+          <td class = "bg-light-gray">
+            <span ><button (click)="clickForSchedule(i, 5)" type="button" class="btn btn-outline-{{arrayCalendarColor[i][5]}}">{{nr[5]}}</button></span>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
