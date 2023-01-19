@@ -1,0 +1,92 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+.DS_STORE
+
+dist
+bazel-out
+integrationbazelbazel-
+.log
+node_modules
+
+# CircleCI temporary file for cache key computation.
+# See `save_month_to_file` in `.circleciconfig.yml`.
+month.txt
+
+# Include when developing application packages.
+pubspec.lock
+.c9
+.idea
+.devcontainer
+!.devcontainerREADME.md
+!.devcontainerrecommended-devcontainer.json
+!.devcontainerrecommended-Dockerfile
+.settings
+.vscodelaunch.json
+.vscodesettings.json
+.vscodetasks.json
+.swo
+.swp
+modules.settings
+modules.vscode
+.vimrc
+.nvimrc
+
+# Don't check in secret files
+secret.js
+
+# Ignore npmyarn debug log
+npm-debug.log
+yarn-error.log
+
+# build-analytics
+.build-analytics
+
+# rollup-test output
+modulesrollup-testdist
+
+# User specific bazel settings
+.bazelrc.user
+
+# User specific ng-dev settings
+.ng-dev.user
+
+.notes.md
+baseline.json
+
+# Ignore .history for the xyz.local-history VSCode extension
+.history
+
+# Husky
+.husky_
+aiocontentexamples.DS_Store
